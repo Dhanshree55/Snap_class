@@ -2,7 +2,7 @@
 
 A high-performance, lightweight attendance tracking and live classroom management dashboard built natively in Python using Streamlit. This application is engineered with professional software architecture patterns, prioritizing data integrity, decoupled presentation layers, and strict data security protocols.
 
----
+----
 
 ## 🏗️ Architectural Core & Engineering Patterns
 
@@ -11,7 +11,7 @@ A high-performance, lightweight attendance tracking and live classroom managemen
 * **Relational Data Modeling:** Engineered with an explicit schema framework mapping subjects, enrollments, and real-time validation parameters safely to eliminate concurrent state mutation issues.
 * **Defensive System Design:** Outfitted with robust backend validation checks to protect computational paths and secure user inputs prior to data persistence stages.
 
----
+----
 
 ## 🛠️ Tech Stack & Dependencies
 
@@ -21,4 +21,4 @@ A high-performance, lightweight attendance tracking and live classroom managemen
 * **Environment Management:** Isolated virtual environment configurations (`venv`)
 * **Security & Credentialing:** Enforced local runtime secret parsing (`.streamlit/secrets.toml`)
 
----
+----
