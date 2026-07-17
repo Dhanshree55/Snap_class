@@ -1,4 +1,5 @@
 import streamlit as st
+
 from src.ui.base_layout import style_background_dashboard, style_base_layout
 
 from src.components.header import header_dashboard
@@ -65,8 +66,10 @@ def student_dashboard():
 
 
         stats = stats_map.get(sid,{"total":0, "attended": 0} )
-        def unenroll_button(subject_id):
-                if st.button("Unenroll from tihs course", type='tertiary', width='stretch', icon=':material/delete_forever:', key=f'unenroll_{subject_id}'):
+        def unenroll_button(subject_code):
+    
+            if st.button(
+        "Unenroll from this course", type='tertiary', width='stretch', icon=':material/delete_forever:',key=f"unenroll_{subject_code}"):
                     unenroll_student_to_subject(student_id, sid)
                     st.toast(f'Unenrolled from {sub['name']} successfully!')
                     st.rerun()
@@ -81,7 +84,7 @@ def student_dashboard():
                     ('📅', 'Total', stats['total']),
                     ('✅', 'Attended', stats['attended']),
                 ],
-                footer_callback=lambda s_id=sid: unenroll_button(s_id)
+                footer_callback=lambda s_code=sub['subject_code']: unenroll_button(s_code)
             )
     footer_dashboard()
 
